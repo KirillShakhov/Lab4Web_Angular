@@ -1,0 +1,6 @@
+/.idea
+
+# dependencies
+/dist
+/node_modules
+/build
