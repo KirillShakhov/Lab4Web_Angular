@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>ru.itmo</groupId>
 	<artifactId>lab4</artifactId>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<name>lab4</name>
 	<description>Lab 4 ITMO Web</description>
 
