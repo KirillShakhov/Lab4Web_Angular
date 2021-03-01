@@ -17,10 +17,29 @@ body, html {
   display: flex;
   justify-content: center;
 }
+@media screen and (min-width: 1113px) {
+  .block {
+    background: #ff2a2a;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: black 0 5px 10px;
+  }
+}
 
-.block {
-  background: #FFFACD;
-  border-radius: 5px;
-  font-family: Arial, Helvetica, sans-serif;
-  box-shadow: black 0 5px 10px;
+@media screen and (max-width: 681px) {
+  .block {
+    background: #fff04d;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: black 0 5px 10px;
+  }
+}
+
+@media screen and (min-width: 682px) and (max-width: 1112px)  {
+  .block {
+    background: #429433;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: black 0 5px 10px;
+  }
 }
