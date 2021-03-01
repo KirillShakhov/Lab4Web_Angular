@@ -4,18 +4,16 @@
     <div class="alert alert-danger" role="alert" *ngIf="errorMessage">{{errorMessage}}</div>
 
     <div class="form-group" [ngClass]="{ 'has-error': f.submitted}">
-      <label for="xSelect">X</label><br>
-      <select form="formId" id="xSelect" #x (change)="setX(x.value)">
-        <option value="-2">-2</option>
-        <option value="-1.5">-1.5</option>
-        <option value="-1">-1</option>
-        <option value="-0.5">-0.5</option>
-        <option value="0">0</option>
-        <option value="0.5">0.5</option>
-        <option value="1">1</option>
-        <option value="1.5">1.5</option>
-        <option value="2">2</option>
-      </select>
+      <label>X:{{point.x}}</label><br>
+      <button style="width: 50px" type="button" [ngClass]="{ 'has-error': f.submitted}" (click)="setX(-4)">-4</button>
+      <button style="width: 50px" type="button" [ngClass]="{ 'has-error': f.submitted}" (click)="setX(-3)">-3</button>
+      <button style="width: 50px" type="button" [ngClass]="{ 'has-error': f.submitted}" (click)="setX(-2)">-2</button>
+      <button style="width: 50px" type="button" [ngClass]="{ 'has-error': f.submitted}" (click)="setX(-1)">-1</button>
+      <button style="width: 50px" type="button" [ngClass]="{ 'has-error': f.submitted}" (click)="setX(0)">0</button>
+      <button style="width: 50px" type="button" [ngClass]="{ 'has-error': f.submitted}" (click)="setX(1)">1</button>
+      <button style="width: 50px" type="button" [ngClass]="{ 'has-error': f.submitted}" (click)="setX(2)">2</button>
+      <button style="width: 50px" type="button" [ngClass]="{ 'has-error': f.submitted}" (click)="setX(3)">3</button>
+      <button style="width: 50px" type="button" [ngClass]="{ 'has-error': f.submitted}" (click)="setX(4)">4</button>
     </div>
 
     <div class="form-group" [ngClass]="{ 'has-error': f.submitted}">
@@ -25,18 +23,16 @@
     </div>
 
     <div class="form-group" [ngClass]="{ 'has-error': f.submitted }">
-      <label for="rSelect">R</label><br>
-      <select form="formId" id="rSelect" #r (change)="drawGraphic($event.target.value); setR(r.value);">
-        <option value="1">1</option>
-        <option value="1.5">1.5</option>
-        <option value="2">2</option>
-        <option value="2.5">2.5</option>
-        <option value="3">3</option>
-        <option value="3.5">3.5</option>
-        <option value="4">4</option>
-        <option value="4.5">4.5</option>
-        <option value="5">5</option>
-      </select>
+      <label>R:{{point.r}}</label><br>
+      <button style="width: 50px" type="button" [ngClass]="{ 'has-error': f.submitted}" (click)="drawGraphic(0); setR(0);">-4</button>
+      <button style="width: 50px" type="button" [ngClass]="{ 'has-error': f.submitted}" (click)="drawGraphic(0); setR(0);">-3</button>
+      <button style="width: 50px" type="button" [ngClass]="{ 'has-error': f.submitted}" (click)="drawGraphic(0); setR(0);">-2</button>
+      <button style="width: 50px" type="button" [ngClass]="{ 'has-error': f.submitted}" (click)="drawGraphic(0); setR(0);">-1</button>
+      <button style="width: 50px" type="button" [ngClass]="{ 'has-error': f.submitted}" (click)="drawGraphic(0); setR(0);">0</button>
+      <button style="width: 50px" type="button" [ngClass]="{ 'has-error': f.submitted}" (click)="drawGraphic(1); setR(1);">1</button>
+      <button style="width: 50px" type="button" [ngClass]="{ 'has-error': f.submitted}" (click)="drawGraphic(2); setR(2);">2</button>
+      <button style="width: 50px" type="button" [ngClass]="{ 'has-error': f.submitted}" (click)="drawGraphic(3); setR(3);">3</button>
+      <button style="width: 50px" type="button" [ngClass]="{ 'has-error': f.submitted}" (click)="drawGraphic(4); setR(4);">4</button>
     </div>
 
     <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Check</button>
