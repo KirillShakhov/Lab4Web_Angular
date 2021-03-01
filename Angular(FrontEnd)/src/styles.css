@@ -26,7 +26,7 @@ body, html {
   }
 }
 
-@media screen and (max-width: 681px) {
+@media screen and (max-width: 682px) {
   .block {
     background: #fff04d;
     border-radius: 5px;
