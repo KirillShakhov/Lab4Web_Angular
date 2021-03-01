@@ -1,6 +1,5 @@
-import { NgModule } from '@angular/core';
+import {Input, NgModule} from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { InfoComponent } from './info/info.component';
 import { HistoryComponent } from './history/history.component';
 import { CheckPointsComponent } from './check-points/check-points.component';
 import {MainRoutingModule} from './main-routing.module';
@@ -15,6 +14,6 @@ import {UrlPermission} from '../services/url-permission/url-permission.service';
     FormsModule
   ],
   providers: [UrlPermission],
-  declarations: [MainComponent, InfoComponent, HistoryComponent, CheckPointsComponent]
+  declarations: [MainComponent, HistoryComponent, CheckPointsComponent]
 })
 export class MainModule { }
