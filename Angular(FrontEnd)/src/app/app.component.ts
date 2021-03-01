@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  static API_URL = 'http://localhost:8080/api';
+  static API_URL = 'http://localhost:19090/api';
   title = 'Lab4-Web';
 }
