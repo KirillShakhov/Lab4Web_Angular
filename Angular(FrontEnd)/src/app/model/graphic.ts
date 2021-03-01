@@ -38,17 +38,17 @@ export class Graphic {
 
     // rectangle
     context.beginPath();
-    context.rect(150, 150 - r * 13, 130 * (r / 5), (r) * 13);
+    context.rect(150, 150, 130 * (r / 5), (r) * 13);
     context.closePath();
     context.strokeStyle = '#2f9aff';
     context.fillStyle = '#2f9aff';
     context.fill();
     context.stroke();
 
-    // sector
+    //  sector
     context.beginPath();
     context.moveTo(150, 150);
-    context.arc(150, 150, 65 * (r / 5), 0, Math.PI / 2, false);
+    context.arc(150, 150, 130 * (r / 5),  Math.PI, Math.PI * 3 / 2, false);
     context.closePath();
     context.strokeStyle = '#2f9aff';
     context.fillStyle = '#2f9aff';
@@ -59,7 +59,7 @@ export class Graphic {
     context.beginPath();
     context.moveTo(150, 150);
     context.lineTo(150 - (130 * (r / 5)), 150);
-    context.lineTo(150, 150 - r * 13);
+    context.lineTo(150, 150 + r * 13);
     context.lineTo(150, 150);
     context.closePath();
     context.strokeStyle = '#2f9aff';
