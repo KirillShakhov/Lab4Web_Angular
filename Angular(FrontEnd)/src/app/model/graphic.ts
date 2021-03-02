@@ -90,7 +90,7 @@ export class Graphic {
       context.beginPath();
       context.moveTo(150, 150);
       context.lineTo(150 + (130 * (Math.abs(r) / 5)), 150);
-      context.lineTo(150, 150 + Math.abs(r) * 13);
+      context.lineTo(150, 150 + r * 13);
       context.lineTo(150, 150);
       context.closePath();
       context.strokeStyle = '#2f9aff';
