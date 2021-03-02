@@ -12,7 +12,7 @@ exports.config = {
     'browserName': 'chrome'
   },
   directConnect: true,
-  baseUrl: 'http://localhost:4200/',
+  baseUrl: 'http://se.ifmo.ru/~s284187/lab4/',
   framework: 'jasmine',
   jasmineNodeOpts: {
     showColors: true,

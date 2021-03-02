@@ -1,5 +1,5 @@
 body {
-  padding: 2em;
+  padding-top: 2em;
 }
 
 /* Shared */
@@ -8,13 +8,13 @@ body {
   position: relative;
   /* width: 13em;  - apply for fixed size */
   margin: 0.2em;
-  padding: 0 15px 0 46px;
+  width: 1000px;
   border: none;
   text-align: left;
-  line-height: 34px;
-  white-space: nowrap;
+  line-height: 30px;
   border-radius: 0.2em;
-  font-size: 16px;
+  font-size: 13px;
+  padding-bottom: 20px;
   color: #FFF;
 }
 
@@ -74,7 +74,7 @@ body {
 }
 
 body, html {
-  padding: 0;
+  padding-top: 70px;
 }
 
 .reset-border-radius {
@@ -113,7 +113,12 @@ nav li {
 }
 
 
-.navbar{ background:black;}
+.navbar{
+  width: 1000px;
+  height: 230px;
+  padding-bottom: 20px;
+  background:white;
+}
 
 #more-info-ico svg {
   margin: 20% 30%;
@@ -144,5 +149,6 @@ nav li {
 }
 
 #history-page {
-  padding-top: 20px;
+  margin-top: 100px;
+  padding-top: 200px;
 }
