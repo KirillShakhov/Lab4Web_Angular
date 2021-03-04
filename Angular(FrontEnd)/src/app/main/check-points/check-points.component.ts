@@ -1,11 +1,16 @@
 import {Component, ElementRef, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
-import { isNumeric } from 'rxjs/util/isNumeric';
+import {isNumeric} from 'rxjs/util/isNumeric';
 import {HttpErrorResponse} from '@angular/common/http';
 import {AuthService} from '../../services/auth/auth.service';
 import {PointsService} from '../../services/points/points.service';
 import {Point} from '../../model/point';
 import {HistoryComponent} from '../history/history.component';
 import {Graphic} from '../../model/graphic';
+
+import {MenuItem} from 'primeng/api';
+import {SelectItem} from 'primeng/api';
+import {SelectItemGroup} from 'primeng/api';
+
 
 @Component({
   providers: [HistoryComponent],
@@ -24,14 +29,31 @@ export class CheckPointsComponent implements OnInit {
   private rightX = ['-2', '-1.5', '-1', '-0.5', '0', '0.5', '1', '1.5', '2'];
   private rightR = ['-2', '-1.5', '-1', '-0.5', '0', '0.5', '1', '1.5', '2'];
   private graphic: Graphic;
+  filteredRadius: ['-2', '-1.5', '-1', '-0.5', '0', '0.5', '1', '1.5', '2'];
+  selectedRadius: any [];
 
-  constructor(private service: PointsService, private authService: AuthService) {
-  }
+  selectedCountry: any;
+
+  countries: any[];
+
+  filteredCountries: any[];
+
+  selectedCountries: any[];
+
+  selectedCountryAdvanced: any[];
+
+  filteredBrands: any[];
+  private countryService: string[];
+
+
+  constructor(private service: PointsService, private authService: AuthService) {}
 
   ngOnInit() {
-    this.point.x = -2;
+    this.point.x = -1;
     this.graphic = new Graphic(this.canvas);
     this.drawGraphic(1);
+
+    this.countryService = ['1', '2', '3', '4', '11', '11111'];
   }
 
   setR(value) {
@@ -61,7 +83,7 @@ export class CheckPointsComponent implements OnInit {
       this.service.getPoints();
     }).catch((err: HttpErrorResponse) => {
       console.log('err');
-      if (err.status == 401 || err.status == 403) {
+      if (err.status === 401 || err.status === 403) {
         this.authService.logOut();
       }
     });
@@ -72,7 +94,7 @@ export class CheckPointsComponent implements OnInit {
     console.log('getting points');
     this.service.getPointsRecalculated(r).subscribe(data => (data as Point[]).forEach(p => this.drawPoint(p)), (err: HttpErrorResponse) => {
       console.log('err');
-      if (err.status == 401 || err.status == 403 ) {
+      if (err.status === 401 || err.status === 403 ) {
         this.authService.logOut();
       }
     });
@@ -114,5 +136,18 @@ export class CheckPointsComponent implements OnInit {
   private error(message: string) {
     this.errorMessage = message;
     setTimeout(() => {this.errorMessage = null; }, 3000);
+  }
+
+  filterCountry(event) {
+    const filtered: any[] = [];
+    const query = event.query;
+    for (let i = 0; i < this.countries.length; i++) {
+      const country = this.countries[i];
+      if (country.name.toLowerCase().indexOf(query.toLowerCase()) == 0) {
+        filtered.push(country);
+      }
+    }
+
+    this.filteredCountries = filtered;
   }
 }
