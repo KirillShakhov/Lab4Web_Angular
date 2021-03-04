@@ -10,7 +10,7 @@ import {MainComponent} from '../main/main.component';
 const routes: Routes = [
   { path: 'login', component: LoginComponent, canActivate: [UrlPermission]},
   { path: 'register', component: RegisterComponent, canActivate: [UrlPermission]},
-  { path: 'auth', redirectTo: 'auth/login', pathMatch: 'full', canActivate: [UrlPermission]}
+  { path: 'auth', redirectTo: 'auth/login', pathMatch: 'full' }
 ];
 
 @NgModule({

@@ -16,7 +16,7 @@ import {Graphic} from '../../model/graphic';
 })
 export class CheckPointsComponent implements OnInit {
 
-  @ViewChild('canvas')
+  @ViewChild('canvas', { static: true })
   canvas: ElementRef;
 
   point: Point = new Point(0, 0, 1, false);
