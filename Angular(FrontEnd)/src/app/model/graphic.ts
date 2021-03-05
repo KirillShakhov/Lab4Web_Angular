@@ -36,67 +36,67 @@ export class Graphic {
     const context = this.canvas.nativeElement.getContext('2d');
     context.clearRect(0, 0, this.canvas.nativeElement.width, this.canvas.nativeElement.height);
     if (r >= 0) {
-      // rectangle
-      context.beginPath();
-      context.rect(150, 150, 130 * (r / 5), (r) * 13);
-      context.closePath();
-      context.strokeStyle = '#2f9aff';
-      context.fillStyle = '#2f9aff';
-      context.fill();
-      context.stroke();
+        // Квадрат
+        context.beginPath();
+        context.rect(150, 150, 130 * (-r / 5), (-r) * 13);
+        context.closePath();
+        context.strokeStyle = '#2f9aff';
+        context.fillStyle = '#2f9aff';
+        context.fill();
+        context.stroke();
 
-      //  sector
-      context.beginPath();
-      context.moveTo(150, 150);
-      context.arc(150, 150, 130 * (r / 5), Math.PI, Math.PI * 3 / 2, false);
-      context.closePath();
-      context.strokeStyle = '#2f9aff';
-      context.fillStyle = '#2f9aff';
-      context.fill();
-      context.stroke();
+        //  Круг
+        context.beginPath();
+        context.moveTo(150, 150);
+        context.arc(150, 150, 130 * (r / 5), Math.PI * 3 / 2, 0, false);
+        context.closePath();
+        context.strokeStyle = '#2f9aff';
+        context.fillStyle = '#2f9aff';
+        context.fill();
+        context.stroke();
 
-      // triangle
-      context.beginPath();
-      context.moveTo(150, 150);
-      context.lineTo(150 - (130 * (r / 5)), 150);
-      context.lineTo(150, 150 + r * 13);
-      context.lineTo(150, 150);
-      context.closePath();
-      context.strokeStyle = '#2f9aff';
-      context.fillStyle = '#2f9aff';
-      context.fill();
-      context.stroke();
+        // Треугольник
+        context.beginPath();
+        context.moveTo(150, 150);
+        context.lineTo(150 + (130 * (r / 10)), 150);
+        context.lineTo(150, 150 + r * 13);
+        context.lineTo(150, 150);
+        context.closePath();
+        context.strokeStyle = '#2f9aff';
+        context.fillStyle = '#2f9aff';
+        context.fill();
+        context.stroke();
     } else {
-      // rectangle
-      context.beginPath();
-      context.rect(150, 150, 130 * (r / 5), (r) * 13);
-      context.closePath();
-      context.strokeStyle = '#2f9aff';
-      context.fillStyle = '#2f9aff';
-      context.fill();
-      context.stroke();
+        // Квадрат
+        context.beginPath();
+        context.rect(150, 150, 130 * (-r / 5), (-r) * 13);
+        context.closePath();
+        context.strokeStyle = '#2f9aff';
+        context.fillStyle = '#2f9aff';
+        context.fill();
+        context.stroke();
 
-      //  sector
-      context.beginPath();
-      context.moveTo(150, 150);
-      context.arc(150, 150, 130 * (Math.abs(r) / 5), 0, Math.PI / 2, false);
-      context.closePath();
-      context.strokeStyle = '#2f9aff';
-      context.fillStyle = '#2f9aff';
-      context.fill();
-      context.stroke();
+        //  Круг
+        context.beginPath();
+        context.moveTo(150, 150);
+        context.arc(150, 150, 130 * (Math.abs(r) / 5), Math.PI/2, Math.PI, false);
+        context.closePath();
+        context.strokeStyle = '#2f9aff';
+        context.fillStyle = '#2f9aff';
+        context.fill();
+        context.stroke();
 
-      // triangle
-      context.beginPath();
-      context.moveTo(150, 150);
-      context.lineTo(150 + (130 * (Math.abs(r) / 5)), 150);
-      context.lineTo(150, 150 + r * 13);
-      context.lineTo(150, 150);
-      context.closePath();
-      context.strokeStyle = '#2f9aff';
-      context.fillStyle = '#2f9aff';
-      context.fill();
-      context.stroke();
+        // Треугольник
+        context.beginPath();
+        context.moveTo(150, 150);
+        context.lineTo(150 + (130 * (r / 10)), 150);
+        context.lineTo(150, 150 + r * 13);
+        context.lineTo(150, 150);
+        context.closePath();
+        context.strokeStyle = '#2f9aff';
+        context.fillStyle = '#2f9aff';
+        context.fill();
+        context.stroke();
     }
     // axes
     context.beginPath();
