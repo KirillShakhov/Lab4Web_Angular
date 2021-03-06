@@ -10,6 +10,9 @@ import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
 
+
+//TokenProvider проверяет и предоставляет токены
+//Токен - это специальный код, разрешающий доступ к данным конкретного пользователя.
 @Component
 public class TokenProvider {
     private final UserService userService;

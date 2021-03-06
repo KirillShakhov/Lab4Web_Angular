@@ -3,6 +3,8 @@ package app.model;
 import app.entities.Point;
 import org.springframework.stereotype.Component;
 
+//Подсчет результата
+//По сути вся полезная работа нашего backend'а
 @Component
 public class Graphic {
     private boolean isInArea(double x, double y, double r) {
@@ -30,6 +32,7 @@ public class Graphic {
         return triangle || square || sector;
     }
 
+    //Преобразование Point в x, y, r
     public boolean isInArea(Point point) {
         return isInArea(point.getX(), point.getY(), point.getR());
     }

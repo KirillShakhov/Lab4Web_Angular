@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Collection;
 
+//Просто интерфейс
 @Repository
 public interface PointRepository extends JpaRepository<Point, Long> {
     Collection<Point> findAllByUser(User user);

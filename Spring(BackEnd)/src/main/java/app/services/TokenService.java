@@ -5,11 +5,13 @@ import org.springframework.stereotype.Service;
 import java.security.SecureRandom;
 import java.util.Base64;
 
+//Сервис по генерации Токенов
 @Service
 public class TokenService {
     private final SecureRandom secureRandom = new SecureRandom();
     private final Base64.Encoder base64Encoder = Base64.getUrlEncoder();
 
+    //Просто создает рандомную строку для использования её в качестве токена
     public String generateNewToken() {
         byte[] randomBytes = new byte[24];
         secureRandom.nextBytes(randomBytes);

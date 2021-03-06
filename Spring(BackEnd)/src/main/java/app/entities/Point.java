@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
+//Самая простая модель того, как это все будет храниться в базе данных
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

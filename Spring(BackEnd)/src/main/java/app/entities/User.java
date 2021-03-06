@@ -14,6 +14,7 @@ import javax.persistence.Table;
 import java.util.ArrayList;
 import java.util.Collection;
 
+//Самая простая модель того, как это все будет храниться в базе данных
 @Entity
 @Table(name="users")
 @Data
