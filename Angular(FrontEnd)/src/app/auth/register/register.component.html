@@ -1,8 +1,9 @@
 <div class="container">
+    <!-- /card-container -->
     <div class="card card-container">
         <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"/>
         <p id="profile-name" class="profile-name-card"></p>
-
+        <!-- /form -->
         <form name="form" (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate>
             <div class="alert alert-danger" role="alert" *ngIf="errorMessage">{{errorMessage}}</div>
             <span id="reauth-email" class="reauth-email"></span>
@@ -47,10 +48,9 @@
                 Cancel
             </button>
 
-        </form><!-- /form -->
-
-    </div><!-- /card-container -->
-</div><!-- /container -->
+        </form>
+    </div>
+</div>
 
 
 

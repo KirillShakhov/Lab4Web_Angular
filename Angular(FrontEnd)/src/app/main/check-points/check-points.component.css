@@ -1,3 +1,4 @@
+/*В данном файле находятся все дополнительные стили для Формы ввода и Канваса*/
 form {
     margin-top: 17%;
     padding: 10px 15px;
@@ -27,29 +28,6 @@ canvas {
 form .form-group {
     margin: 15px 0;
 
-}
-
-form button {
-    margin-top: 30px;
-    height: 38px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.btn-block {
-    width: 150px;
-}
-
-form input[type=text], form select {
-    width: 200px;
-    margin-left: auto;
-    margin-right: auto;
-    height: 30px;
-    border-radius: 5px;
-}
-
-form select {
-    margin-left: 40px;
 }
 
 .form-group {
