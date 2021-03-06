@@ -1,49 +1,52 @@
 <div class="container {{isDesktopDisplay()?'':'flex-g-center'}}">
     <form id="formId" class="block {{isDesktopDisplay()?'desktop-form':''}}" name="form-check"
-    (ngSubmit)="addPoint()" #f="ngForm" novalidate>
+          (ngSubmit)="addPoint()" #f="ngForm" novalidate>
         <div class="alert alert-danger" role="alert" *ngIf="errorMessage">{{errorMessage}}</div>
         <div class="form-label" [ngClass]="{ 'has-error': f.submitted}">
-          <label for="X_input" class="form-label">X</label>
-          <input form="formId" class="form-control" list="datalistOptions" id="X_input" placeholder="Введите X ..." #x (change)="setX(x.value)" required>
-          <datalist id="datalistOptions">
-            <option value="-2">-2</option>
-            <option value="-1.5">-1.5</option>
-            <option value="-1">-1</option>
-            <option value="-0.5">-0.5</option>
-            <option value="0">0</option>
-            <option value="0.5">0.5</option>
-            <option value="1">1</option>
-            <option value="1.5">1.5</option>
-            <option value="2">2</option>
-          </datalist>
+            <label for="X_input" class="form-label">X</label>
+            <input form="formId" class="form-control" list="datalistOptions" id="X_input" placeholder="Введите X ..." #x
+                   (change)="setX(x.value)" required>
+            <datalist id="datalistOptions">
+                <option value="-2">-2</option>
+                <option value="-1.5">-1.5</option>
+                <option value="-1">-1</option>
+                <option value="-0.5">-0.5</option>
+                <option value="0">0</option>
+                <option value="0.5">0.5</option>
+                <option value="1">1</option>
+                <option value="1.5">1.5</option>
+                <option value="2">2</option>
+            </datalist>
             <div class="invalid-feedback">Введите X</div>
 
         </div>
         <div class="form-group" [ngClass]="{ 'has-error': f.submitted}">
-          <label for="y">Y</label>
-          <input type="text" class="form-control" id="y" name="password" [(ngModel)]="point.y"
-                 #y="ngModel" required/>
+            <label for="y">Y</label>
+            <input type="text" class="form-control" id="y" name="password" [(ngModel)]="point.y"
+                   #y="ngModel" required/>
         </div>
         <div class="form-group" [ngClass]="{ 'has-error': f.submitted }">
-          <label for="rSelect">R</label><br>
-          <input form="formId" class="form-control" list="r_select" id="rSelect" placeholder="Введите R ..." #r (change)="drawGraphic(r.value); setR(r.value);"
-                 (click)="drawGraphic(r.value); setR(r.value);" required>
-          <datalist id="r_select">
-            <option value="-2">-2</option>
-            <option value="-1.5">-1.5</option>
-            <option value="-1">-1</option>
-            <option value="-0.5">-0.5</option>
-            <option value="0">0</option>
-            <option value="0.5">0.5</option>
-            <option value="1">1</option>
-            <option value="1.5">1.5</option>
-            <option value="2">2</option>
-          </datalist>
-          <div class="invalid-feedback">Введите R</div>
+            <label for="rSelect">R</label><br>
+            <input form="formId" class="form-control" list="r_select" id="rSelect" placeholder="Введите R ..." #r
+                   (change)="drawGraphic(r.value); setR(r.value);"
+                   (click)="drawGraphic(r.value); setR(r.value);" required>
+            <datalist id="r_select">
+                <option value="-2">-2</option>
+                <option value="-1.5">-1.5</option>
+                <option value="-1">-1</option>
+                <option value="-0.5">-0.5</option>
+                <option value="0">0</option>
+                <option value="0.5">0.5</option>
+                <option value="1">1</option>
+                <option value="1.5">1.5</option>
+                <option value="2">2</option>
+            </datalist>
+            <div class="invalid-feedback">Введите R</div>
         </div>
         <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Check</button>
-      </form>
+    </form>
     <div class="{{isDesktopDisplay()?'':'flex-g-center'}}">
-        <canvas #canvas class="block {{isDesktopDisplay()?'desktop-canvas':'mobile-canvas'}}" width="300" height="300" (click)="addPointFromCanvas()"></canvas>
+        <canvas #canvas class="block {{isDesktopDisplay()?'desktop-canvas':'mobile-canvas'}}" width="300" height="300"
+                (click)="addPointFromCanvas()"></canvas>
     </div>
 </div>

@@ -12,13 +12,16 @@ export class UrlPermission implements CanActivate {
     console.log(isAuthorized);
     console.log(state.url);
 
-    if (!isAuthorized && state.url.search('main') != -1) {
+    if (!isAuthorized && state.url.search('main') !== -1) {
       this.router.navigate(['auth/login']);
       return false;
-    } else if (isAuthorized && state.url.search('auth') != -1) {
+    } else if (isAuthorized && state.url.search('auth') !== -1) {
       this.router.navigate(['main']);
       return false;
     }
     return true;
   }
+}
+
+export class UrlPermissionService {
 }

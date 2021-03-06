@@ -1,22 +1,22 @@
 <!--Header-->
 <nav class="navbar navbar-expand fixed-top navbar-light bg-light w-100 h-auto">
-  <div class="container">
-    <div class="d-flex flex-row bd-highlight mb-3">
-      <div class="p-2 bd-highlight align-self-center">
-        <img class="profile-img-card-header" src="//ssl.gstatic.com/accounts/ui/avatar_1x.png"/>
-      </div>
-      <div class="p-2 bd-highlight align-self-center">
-        <strong>Name</strong>: {{currentUser.username}}<br>
-        <strong>Автор</strong>: Даня Сухняк P3232<br>
-        <strong>Вариант</strong>: 285050<br>
-      </div>
+    <div class="container">
+        <div class="d-flex flex-row bd-highlight mb-3">
+            <div class="p-2 bd-highlight align-self-center">
+                <img class="profile-img-card-header" src="//ssl.gstatic.com/accounts/ui/avatar_1x.png"/>
+            </div>
+            <div class="p-2 bd-highlight align-self-center">
+                <strong>Name</strong>: {{currentUser.username}}<br>
+                <strong>Автор</strong>: Адмакин Максим Александрович P3213<br>
+                <strong>Вариант</strong>: 91238<br>
+            </div>
+        </div>
+        <div class="d-flex flex-row-reverse bd-highlight">
+            <div class="p-2 bd-highlight">
+                <button class="btn btn-primary h-auto" (click)="logOut()">LogOut</button>
+            </div>
+        </div>
     </div>
-    <div class="d-flex flex-row-reverse bd-highlight">
-      <div class="p-2 bd-highlight">
-        <button class="btn btn-primary h-auto" (click) ="logOut()">LogOut</button>
-      </div>
-    </div>
-  </div>
 </nav>
 <!--Body-->
 <!--<div class="container">-->
