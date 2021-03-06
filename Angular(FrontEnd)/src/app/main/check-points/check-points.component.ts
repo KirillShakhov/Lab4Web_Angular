@@ -26,11 +26,9 @@ export class CheckPointsComponent implements OnInit {
 
   point: Point = new Point(0, 0, 1, false);
   errorMessage: string;
-  private rightX = ['-2', '-1.5', '-1', '-0.5', '0', '0.5', '1', '1.5', '2'];
-  private rightR = ['-2', '-1.5', '-1', '-0.5', '0', '0.5', '1', '1.5', '2'];
+  private rightX = [-2, -1.5, -1, -0.5, 0, 0.5, 1, 1.5, 2];
+  private rightR = [-2, -1.5, -1, -0.5, 0, 0.5, 1, 1.5, 2];
   private graphic: Graphic;
-  filteredRadius: ['-2', '-1.5', '-1', '-0.5', '0', '0.5', '1', '1.5', '2'];
-  selectedRadius: any [];
 
   selectedCountry: any;
 
@@ -73,7 +71,7 @@ export class CheckPointsComponent implements OnInit {
     } else if (!isNumeric(this.point.x) && !(this.rightX.includes(this.point.x))) {
       this.error('Wrong x value');
       return false;
-    } else if (!isNumeric(this.point.r) && !(this.rightR.includes(this.point.r))) {
+    } else if (!isNumeric(this.point.r) && !(this.rightR.includes(this.point.r)) || !(-2 < this.point.r && this.point.r < 2)) {
       this.error('Wrong r value');
       return false;
     }
@@ -130,24 +128,11 @@ export class CheckPointsComponent implements OnInit {
   }
 
   isDesktopDisplay() {
-    return document.body.clientWidth >= 1000;
+    return document.body.clientWidth >= 672;
   }
 
   private error(message: string) {
     this.errorMessage = message;
     setTimeout(() => {this.errorMessage = null; }, 3000);
-  }
-
-  filterCountry(event) {
-    const filtered: any[] = [];
-    const query = event.query;
-    for (let i = 0; i < this.countries.length; i++) {
-      const country = this.countries[i];
-      if (country.name.toLowerCase().indexOf(query.toLowerCase()) == 0) {
-        filtered.push(country);
-      }
-    }
-
-    this.filteredCountries = filtered;
   }
 }
