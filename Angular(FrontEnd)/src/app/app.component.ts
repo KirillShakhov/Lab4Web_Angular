@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html'
+    selector: 'app-root',
+    templateUrl: './app.component.html'
 })
 export class AppComponent {
-  static API_URL = 'http://localhost:19090/api';
-  title = 'Lab4-Web';
+    // Адрес для доступа к бэкэенду
+    // Порт настраивался в Spring в server.port=19090
+    static API_URL = 'http://localhost:19090/api';
+    title = 'Lab4-Web';
 }

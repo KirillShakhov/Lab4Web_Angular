@@ -1,5 +1,5 @@
-<div class="container {{isDesktopDisplay()?'':'flex-g-center'}}">
-    <form id="formId" class="block {{isDesktopDisplay()?'desktop-form':''}}" name="form-check"
+<div class="container">
+    <form id="formId" class="block desktop-form" name="form-check"
           (ngSubmit)="addPoint()" #f="ngForm" novalidate>
         <div class="alert alert-danger" role="alert" *ngIf="errorMessage">{{errorMessage}}</div>
         <div class="form-label" [ngClass]="{ 'has-error': f.submitted}">
@@ -44,8 +44,8 @@
         </div>
         <button class="btn btn-primary h-auto btn-block" type="submit">Check</button>
     </form>
-    <div class="{{isDesktopDisplay()?'':'flex-g-center'}}">
-        <canvas #canvas class="block {{isDesktopDisplay()?'desktop-canvas':'mobile-canvas'}}" width="300" height="300"
+    <div class="">
+        <canvas #canvas class="block desktop-canvas" width="300" height="300"
                 (click)="addPointFromCanvas()"></canvas>
     </div>
 </div>
