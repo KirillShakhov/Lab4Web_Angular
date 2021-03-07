@@ -6,7 +6,7 @@ import {Component} from '@angular/core';
 })
 export class AppComponent {
     // Адрес для доступа к бэкэенду
-    // Порт настраивался в Spring в server.port=19090
-    static API_URL = 'http://localhost:19090/api';
+    // Порт настраивался в Spring в server.port=6060
+    static API_URL = 'http://localhost:6060/api';
     title = 'Lab4-Web';
 }
