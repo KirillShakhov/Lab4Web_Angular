@@ -1,50 +1,76 @@
 <div class="container">
+    <!--Начало формы-->
     <form id="formId" class="block desktop-form" name="form-check"
           (ngSubmit)="addPoint()" #f="ngForm" novalidate>
+
+
+        <!--Сообщение об ошибке. Например: Wrong R-->
         <div class="alert alert-danger" role="alert" *ngIf="errorMessage">{{errorMessage}}</div>
+
+
+        <!--Autocomplete для X(PrimeNG)-->
         <div class="form-label" [ngClass]="{ 'has-error': f.submitted}">
-            <label for="X_input" class="form-label">X</label>
-            <input form="formId" class="form-control" list="datalistOptions" id="X_input" placeholder="Введите X ..." #x
-                   (change)="setX(x.value)" required>
-            <datalist id="datalistOptions">
-                <option value="-2">-2</option>
-                <option value="-1.5">-1.5</option>
-                <option value="-1">-1</option>
-                <option value="-0.5">-0.5</option>
-                <option value="0">0</option>
-                <option value="0.5">0.5</option>
-                <option value="1">1</option>
-                <option value="1.5">1.5</option>
-                <option value="2">2</option>
-            </datalist>
-            <div class="invalid-feedback">Введите X</div>
+            <br>
+            <span class="p-float-label">
+                <input pInputText form="formId" class="form-control" list="x_select" id="X_input" type="text" #x
+                       (change)="setX(x.value)" required>
+                <label>Введите X:</label>
+                <datalist id="x_select">
+                    <option value="-2">-2</option>
+                    <option value="-1.5">-1.5</option>
+                    <option value="-1">-1</option>
+                    <option value="-0.5">-0.5</option>
+                    <option value="0">0</option>
+                    <option value="0.5">0.5</option>
+                    <option value="1">1</option>
+                    <option value="1.5">1.5</option>
+                    <option value="2">2</option>
+                </datalist>
+                <div class="invalid-feedback">Введите X</div>
+            </span>
         </div>
+
+        <!--InputText для Y(PrimeNG)-->
         <div class="form-group" [ngClass]="{ 'has-error': f.submitted}">
-            <label for="y">Y</label>
-            <input form="formId" class="form-control" id="y" name="password" [(ngModel)]="point.y"
-                   #y="ngModel" required/>
+            <br>
+            <span class="p-float-label">
+                <input pInputText form="formId" class="form-control" id="Y_input" type="text" [(ngModel)]="point.y"
+                       #y="ngModel" required>
+                <label>Введите Y:</label>
+            </span>
         </div>
+
+
+        <!--Autocomplete для R(PrimeNG)-->
         <div class="form-group" [ngClass]="{ 'has-error': f.submitted }">
-            <label for="rSelect">R</label><br>
-            <input form="formId" class="form-control" list="r_select" id="rSelect" placeholder="Введите R ..." #r
-                   (change)="drawGraphic(r.value); setR(r.value);"
-                   (click)="drawGraphic(r.value); setR(r.value);" required>
-            <datalist id="r_select">
-                <option value="-2">-2</option>
-                <option value="-1.5">-1.5</option>
-                <option value="-1">-1</option>
-                <option value="-0.5">-0.5</option>
-                <option value="0">0</option>
-                <option value="0.5">0.5</option>
-                <option value="1">1</option>
-                <option value="1.5">1.5</option>
-                <option value="2">2</option>
-            </datalist>
-            <div class="invalid-feedback">Введите R</div>
+            <br>
+            <span class="p-float-label">
+                <input pInputText form="formId" class="form-control" list="r_select" id="rSelect" type="text" #r
+                       (change)="drawGraphic(r.value); setR(r.value);"
+                       (click)="drawGraphic(r.value); setR(r.value);" required>
+                <label>Введите R:</label>
+                <datalist id="r_select">
+                    <option value="-2">-2</option>
+                    <option value="-1.5">-1.5</option>
+                    <option value="-1">-1</option>
+                    <option value="-0.5">-0.5</option>
+                    <option value="0">0</option>
+                    <option value="0.5">0.5</option>
+                    <option value="1">1</option>
+                    <option value="1.5">1.5</option>
+                    <option value="2">2</option>
+                </datalist>
+                <div class="invalid-feedback">Введите R</div>
+            </span>
         </div>
-        <button class="btn btn-primary h-auto btn-block" type="submit">Check</button>
+        <br>
+
+        <!--Кнопка проверить(PrimeNG)-->
+        <button pButton pRipple type="submit" label="Проверить" class="p-button-raised" icon="pi pi-heart"
+                iconPos="right"></button>
     </form>
-    <div class="">
+    <div>
+        <!--Канвас. Тут рисуются координаты и точки-->
         <canvas #canvas class="block desktop-canvas" width="300" height="300"
                 (click)="addPointFromCanvas()"></canvas>
     </div>
