@@ -6,7 +6,6 @@ import {AuthRoutingModule} from './auth-routing.module';
 import {FormsModule} from '@angular/forms';
 import {UrlPermission} from '../services/url-permission/url-permission.service';
 
-import {PasswordModule} from 'primeng/password';
 import {InputTextModule} from 'primeng/inputtext';
 import {ButtonModule} from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
@@ -19,7 +18,6 @@ import { RippleModule } from 'primeng/ripple';
         AuthRoutingModule,
         FormsModule,
 
-        PasswordModule,
         InputTextModule,
         ButtonModule,
         RippleModule

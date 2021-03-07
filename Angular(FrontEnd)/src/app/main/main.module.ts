@@ -9,19 +9,23 @@ import {UrlPermission} from '../services/url-permission/url-permission.service';
 
 import {AutoCompleteModule} from 'primeng/autocomplete';
 import {InputTextModule} from 'primeng/inputtext';
+import {ButtonModule} from 'primeng/button';
+import {RippleModule} from 'primeng/ripple';
 
 
 @NgModule({
-  imports: [
-    CommonModule,
-    MainRoutingModule,
-    FormsModule,
+    imports: [
+        CommonModule,
+        MainRoutingModule,
+        FormsModule,
 
-    AutoCompleteModule,
-    InputTextModule,
-
-  ],
-  providers: [UrlPermission],
-  declarations: [MainComponent, HistoryComponent, CheckPointsComponent]
+        AutoCompleteModule,
+        InputTextModule,
+        ButtonModule,
+        RippleModule
+    ],
+    providers: [UrlPermission],
+    declarations: [MainComponent, HistoryComponent, CheckPointsComponent]
 })
-export class MainModule { }
+export class MainModule {
+}
