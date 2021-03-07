@@ -1,15 +1,12 @@
 <div class="container">
     <!--Начало формы-->
-    <form id="formId" class="block desktop-form" name="form-check"
-          (ngSubmit)="addPoint()" #f="ngForm" novalidate>
-
+    <form id="formId" class="block desktop-form" name="form-check" (ngSubmit)="addPoint()" #f="ngForm" novalidate>
 
         <!--Сообщение об ошибке. Например: Wrong R-->
         <div class="alert alert-danger" role="alert" *ngIf="errorMessage">{{errorMessage}}</div>
 
-
         <!--Autocomplete для X(PrimeNG)-->
-        <div class="form-label" [ngClass]="{ 'has-error': f.submitted}">
+        <div class="form-label">
             <br>
             <span class="p-float-label">
                 <input pInputText form="formId" class="form-control" list="x_select" id="X_input" type="text" #x
@@ -31,18 +28,18 @@
         </div>
 
         <!--InputText для Y(PrimeNG)-->
-        <div class="form-group" [ngClass]="{ 'has-error': f.submitted}">
+        <div class="form-group">
             <br>
             <span class="p-float-label">
-                <input pInputText form="formId" class="form-control" id="Y_input" type="text" [(ngModel)]="point.y"
-                       #y="ngModel" required>
+                <input pInputText form="formId" class="form-control" id="Y_input" type="text" #y
+                       (change)="setY(y.value)" required>
                 <label>Введите Y:</label>
             </span>
         </div>
 
 
         <!--Autocomplete для R(PrimeNG)-->
-        <div class="form-group" [ngClass]="{ 'has-error': f.submitted }">
+        <div class="form-group">
             <br>
             <span class="p-float-label">
                 <input pInputText form="formId" class="form-control" list="r_select" id="rSelect" type="text" #r

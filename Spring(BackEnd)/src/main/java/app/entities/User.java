@@ -26,7 +26,7 @@ public class User implements UserDetails {
 
 	private String password;
 
-    private String authToken;
+	private String authToken;
 
 
 	@JsonIgnore
@@ -61,5 +61,5 @@ public class User implements UserDetails {
 		return authorities;
 	}
 
-	
+
 }

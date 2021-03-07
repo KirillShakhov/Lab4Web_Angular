@@ -22,7 +22,6 @@ export class CheckPointsComponent implements OnInit {
 
     point: Point = new Point(0, 0, 1, false);
     errorMessage: string;
-    private rightX = ['-2', '-1.5', '-1', '-0.5', '0', '0.5', '1', '1.5', '2'];
     private rightR = ['-2', '-1.5', '-1', '-0.5', '0', '0.5', '1', '1.5', '2'];
     private graphic: Graphic;
 
@@ -42,21 +41,24 @@ export class CheckPointsComponent implements OnInit {
         this.point.x = value;
     }
 
+    setY(value) {
+        this.point.x = value;
+    }
+
     addPoint() {
         console.log('adding point');
         // Валидация на фронте
-        if (!isNumeric(this.point.y) || !(-3 < this.point.y && this.point.y < 3)) {
-            this.error('Wrong y value');
-            return false;
-        } else if (!isNumeric(this.point.x) || !(-2 <= this.point.x && this.point.x <= 2)) {
+        if (!isNumeric(this.point.x) || !(-2 <= this.point.x && this.point.x <= 2)) {
             this.error('Wrong x value');
+            return false;
+        } else if (!isNumeric(this.point.y) || !(-3 < this.point.y && this.point.y < 3)) {
+            this.error('Wrong y value');
             return false;
         } else if (!isNumeric(this.point.r) || !(this.rightR.includes(String(this.point.r)))
             || !(-2 <= this.point.r && this.point.r <= 2)) {
             this.error('Wrong r value');
             return false;
         }
-
         this.service.addPoint(this.point).then(data => {
             this.drawPoint(<Point>data);
             this.service.getPoints();
@@ -114,7 +116,11 @@ export class CheckPointsComponent implements OnInit {
     }
 
     private error(message: string) {
-        this.errorMessage = message;
-        setTimeout(() => {this.errorMessage = null; }, 3000);
+        if (message !== '') {
+            this.errorMessage = message;
+            setTimeout(() => {
+                this.errorMessage = null;
+            }, 3000);
+        }
     }
 }
