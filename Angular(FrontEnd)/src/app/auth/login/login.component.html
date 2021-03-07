@@ -5,25 +5,41 @@
 
         <form id="data" name="form-signin" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
             <div class="alert alert-danger" role="alert" *ngIf="errorMessage">{{errorMessage}}</div>
-
-            <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+            <br>
+            <!--Поле ввода Username-->
+            <span class="p-float-label">
+                <input pInputText name="username" class="form-control" id="username" type="text" pInputText [(ngModel)]="user.username" #username="ngModel" required>
                 <label for="username">Username</label>
-                <input type="text" class="form-control" id="username" name="username" [(ngModel)]="user.username"
-                       #username="ngModel" required/>
-                <!--               pattern="[^ @]*@[^ @]*"-->
-                <!--        <div *ngIf="f.submitted && !username.valid" class="help-block">Требуется действительный адрес электронной почты</div>-->
-            </div>
+                <!--          pattern="[^ @]*@[^ @]*"-->
+                <div *ngIf="f.submitted && !username.valid" class="help-block">
 
-
-
-            <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
+                    <!--          <div *ngIf="username.errors.required">-->
+                    <!--            Email is required.-->
+                    <!--          </div>-->
+                    <div *ngIf="username.errors.pattern">
+                        A valid email address is required
+                    </div>
+                </div>
+            </span>
+            <br>
+            <!--Поле ввода Password-->
+            <span class="p-float-label">
+                <input pInputText type="password" class="form-control" name="password" id="password" [(ngModel)]="user.password"
+                       #password="ngModel" required minlength="4">
                 <label for="password">Password</label>
-                <input type="password" class="form-control" id="password" name="password" [(ngModel)]="user.password"
-                       #password="ngModel" required/>
-                <div *ngIf="f.submitted && !password.valid" class="help-block">Введите пароль</div>
-            </div>
+                <div *ngIf="f.submitted && !password.valid" class="help-block">
+                    <div *ngIf="password.errors.required">
+                        password is required.
+                    </div>
+                    <div *ngIf="password.errors.minlength">
+                        password must be at least 4 characters long.
+                    </div>
+                </div>
+            </span>
+            <br>
         </form>
         <button pButton pRipple form="data" type="submit" label="Войти" class="p-button-raised" icon="pi pi-check" iconPos="right"></button>
+        <br>
         <button pButton type="button" icon="pi pi-chevron-right" iconPos="right" class="p-button-text" label="Регистрация" [routerLink]="['/auth/register']"></button>
     </div>
 </div>
