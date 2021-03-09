@@ -3,8 +3,8 @@
     width: 80%;
     letter-spacing: 3px;
     padding: 100px;
-    margin-top: 5%;
-    margin-bottom: 20%;
+    margin:0 auto;
+
 }
 
 #point-history-card th, #point-history-card td {
