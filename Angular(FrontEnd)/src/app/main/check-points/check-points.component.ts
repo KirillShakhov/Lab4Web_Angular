@@ -20,7 +20,7 @@ export class CheckPointsComponent implements OnInit {
     @ViewChild('canvas', { static: true })
     canvas: ElementRef;
 
-    point: Point = new Point(0, 0, 1, false);
+    point: Point = new Point(0, 0, 0, 1, false);
     errorMessage: string;
     private rightR = ['-2', '-1.5', '-1', '-0.5', '0', '0.5', '1', '1.5', '2'];
     private graphic: Graphic;
@@ -42,7 +42,7 @@ export class CheckPointsComponent implements OnInit {
     }
 
     setY(value) {
-        this.point.x = value;
+        this.point.y = value;
     }
 
     addPoint() {

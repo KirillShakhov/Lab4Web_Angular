@@ -9,9 +9,9 @@
         <div class="form-label">
             <br>
             <span class="p-float-label">
-                <input pInputText form="formId" class="form-control" list="x_select" id="X_input" type="text" #x
-                       (change)="setX(x.value)" required>
-                <label>Введите X:</label>
+                <input pInputText form="formId" class="form-control" id="x" name="password" [(ngModel)]="point.x"
+                       #x="ngModel" required/>
+                <label for="x">Введите X:</label>
                 <datalist id="x_select">
                     <option value="-2">-2</option>
                     <option value="-1.5">-1.5</option>
@@ -31,9 +31,11 @@
         <div class="form-group">
             <br>
             <span class="p-float-label">
-                <input pInputText form="formId" class="form-control" id="Y_input" type="text" #y
-                       (change)="setY(y.value)" required>
-                <label>Введите Y:</label>
+<!--                <input pInputText form="formId" class="form-control" id="Y_input" type="text" #y-->
+<!--                       (change)="setY(y.value)" required>-->
+                <input pInputText form="formId" class="form-control" id="y" name="password" [(ngModel)]="point.y"
+                       #y="ngModel" required/>
+                <label for="y">Введите Y:</label>
             </span>
         </div>
 
